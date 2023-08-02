@@ -1,0 +1,55 @@
+/* src/components/CoasterTable.css */
+
+.coaster-table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .coaster-table-filter-container {
+    margin-bottom: 20px;
+  }
+  
+  .coaster-table-filter-container label,
+  .coaster-table-filter-container select,
+  .coaster-table-filter-container input {
+    font-size: 14px;
+    border-radius: 8px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+  }
+  
+  .coaster-table {
+    width: 80%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-collapse: collapse;
+    opacity: 80%;
+  }
+  
+  .coaster-table th,
+  .coaster-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  .coaster-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .coaster-table button {
+    background-color: #ff6961;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .coaster-table button:hover {
+    background-color: #ff4438;
+  }
+  
