@@ -4,3 +4,34 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+/* Center the CoasterCounter component */
+.coaster-counter {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 50px;
+  color: whitesmoke;
+  background-color: darkblue;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 300px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.new-cred-button {
+  background-color: darkblue;
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  max-width: 800px;
+  text-align: center;
+  margin: 10px auto;
+}
