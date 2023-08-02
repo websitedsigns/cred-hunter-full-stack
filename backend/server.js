@@ -8,6 +8,9 @@ const app = express();
 const port = 3001; // You can use any port number you like
 
 app.use(bodyParser.json());
+const cors = require('cors');
+app.use(cors());
+
 
 // Replace <password> and <dbname> with your actual credentials and database name
 const mongoURI = 'mongodb://localhost:27017/';

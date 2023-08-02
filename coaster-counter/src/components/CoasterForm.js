@@ -7,10 +7,19 @@ const CoasterForm = ({ onAddCoaster }) => {
   const [manufacturer, setManufacturer] = useState('');
   const [themePark, setThemePark] = useState('');
 
+  const capitalizeFirstLetter = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name && manufacturer && themePark) {
-      onAddCoaster({ name, manufacturer, themePark });
+      const capitalizedCoaster = {
+        name: capitalizeFirstLetter(name),
+        manufacturer: capitalizeFirstLetter(manufacturer),
+        themePark: capitalizeFirstLetter(themePark),
+      };
+      onAddCoaster(capitalizedCoaster);
       setName('');
       setManufacturer('');
       setThemePark('');
@@ -29,7 +38,7 @@ const CoasterForm = ({ onAddCoaster }) => {
         <option value="">Select Manufacturer</option>
         {manufacturerTypes.map((manufacturer) => (
           <option key={manufacturer} value={manufacturer}>
-            {manufacturer}
+            {capitalizeFirstLetter(manufacturer)}
           </option>
         ))}
       </select>
@@ -37,7 +46,7 @@ const CoasterForm = ({ onAddCoaster }) => {
         <option value="">Select Theme Park</option>
         {themeParks.map((themePark) => (
           <option key={themePark} value={themePark}>
-            {themePark}
+            {capitalizeFirstLetter(themePark)}
           </option>
         ))}
       </select>
