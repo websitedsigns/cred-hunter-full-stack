@@ -1,14 +1,17 @@
 
 export const themeParks = [
     'Southend Adventure Island',
+    'American Adventure',
     'Alton Towers Resort',
     'Adventure Wonderland',
+    'Babylon Park',
     'The Big Sheep',
     'Billing Aquadrome',
     'Blackgang Chine',
     'Blackpool Pleasure Beach',
     'Bottons Pleasure Beach',
     'Brean Leisure Park',
+    'Brent Beach',
     'Camel Creek Adventure Park',
     'Chessington World of Adventures',
     'Clacton',

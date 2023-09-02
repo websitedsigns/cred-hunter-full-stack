@@ -41,7 +41,7 @@ const CoasterForm = ({ onAddCoaster }) => {
           </option>
         ))}
       </select>
-      <button type="submit" className="new-cred-button">New Cred</button>
+      <button type="submit">Add Coaster</button>
     </form>
   );
 };

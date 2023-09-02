@@ -3,18 +3,18 @@ import CoasterForm from './components/CoasterForm';
 import CoasterTable from './components/CoasterTable';
 import CoasterCounter from './components/CoasterCounter';
 import axios from 'axios';
+import ReactDOM from 'react-dom';
+
 import './styles/styles.css';
 import './App.css';
 
 const App = () => {
   const [coasters, setCoasters] = useState([]);
 
-  // Load coaster data from the backend on component mount
   useEffect(() => {
     fetchCoasters();
   }, []);
 
-  // Fetch coaster data from the backend
   const fetchCoasters = async () => {
     try {
       const response = await axios.get('/api/coasters');
@@ -33,9 +33,8 @@ const App = () => {
     );
 
     if (!exists) {
-      // Add the new coaster with a generated _id property
       const updatedCoasters = [...coasters, { ...newCoaster, _id: Date.now().toString() }];
-      setCoasters(updatedCoasters); // Update the state immediately
+      setCoasters(updatedCoasters);
 
       try {
         const response = await axios.post('/api/coasters', newCoaster);
@@ -49,10 +48,8 @@ const App = () => {
         // You may also want to update the state back to its previous value if there's an error
       }
 
-      // Scroll back to the top of the page after adding a coaster
       window.scrollTo(0, 0);
     } else {
-      // Display an error message or toast notification that the coaster already exists
       alert('Coaster already exists!');
     }
   };
@@ -61,7 +58,7 @@ const App = () => {
     try {
       const response = await axios.delete(`/api/coasters/${coasterId}`);
       if (response.status === 200) {
-        setCoasters(coasters.filter((coaster) => coaster._id !== coasterId));
+        setCoasters((prevCoasters) => prevCoasters.filter((coaster) => coaster._id !== coasterId));
       } else {
         // Handle error if coaster was not removed
       }
@@ -75,7 +72,7 @@ const App = () => {
       <h1 className="header">Coaster Counter</h1>
       <CoasterCounter totalCount={coasters.length} />
       <CoasterForm onAddCoaster={handleAddCoaster} existingCoasters={coasters} />
-      <CoasterTable coasters={coasters} onRemoveCoaster={handleRemoveCoaster} />
+      <CoasterTable coasters={coasters} setCoasters={setCoasters} onRemoveCoaster={handleRemoveCoaster} />
     </div>
   );
 };
